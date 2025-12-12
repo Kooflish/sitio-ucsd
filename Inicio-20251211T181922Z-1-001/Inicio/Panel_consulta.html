@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel Administrativo | UCSD</title>
+
+<!-- Tipografía -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===========================================================
+   VARIABLES + RESET
+=========================================================== */
+:root {
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --primary: #2b6cb0;
+  --primary-light: #3f82cc;
+  --border: #d4d8dd;
+  --radius: 14px;
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 3px 10px rgba(0,0,0,0.12);
+  --transition: .3s ease;
+  --font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===========================================================
+   CONTENEDOR
+=========================================================== */
+.admin-container {
+  max-width: 900px;
+  padding: 2rem;
+  margin: auto;
+}
+
+/* ===========================================================
+   HEADER
+=========================================================== */
+.admin-header {
+  text-align: center;
+  background: var(--card-bg);
+  padding: 2rem 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.admin-header h1 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: .5rem;
+}
+
+.admin-header p {
+  font-size: .95rem;
+  color: #555;
+}
+
+/* ===========================================================
+   ACORDEÓN
+=========================================================== */
+.accordion {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Tarjetas */
+.accordion-item {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 0, 0, 0.164);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.accordion-item.open {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+/* Encabezado */
+.accordion-header {
+  padding: 1.3rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition);
+  color: var(--primary);
+  background: linear-gradient(to right, #ffffff, #f9fbff);
+}
+
+.accordion-header:hover {
+  background: #2b6cb0;
+  color: white;
+}
+
+/* Flecha */
+.accordion-header span {
+  font-size: 1.3rem;
+  transition: var(--transition);
+  color: var(--primary);
+}
+
+.accordion-header:hover span {
+  font-size: 1.3rem;
+  transition: var(--transition);
+  color: white;
+}
+
+.accordion-item.open span {
+  transform: rotate(90deg);
+}
+
+/* Contenido */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.6rem;
+  transition: max-height var(--transition);
+  background: #fcfdff;
+  border-top: 1px solid var(--border);
+}
+
+.accordion-content ul {
+  list-style: none;
+  padding: 1rem 0 1.4rem;
+}
+
+.accordion-content li {
+  margin-bottom: .75rem;
+}
+
+.accordion-content a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primary);
+  background: #eaf2ff;
+  padding: .45rem .8rem;
+  border-radius: 8px;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.accordion-content a:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===========================================================
+   RESPONSIVE
+=========================================================== */
+@media (max-width: 600px) {
+  .admin-header h1 {
+    font-size: 1.6rem;
+  }
+  .accordion-header {
+    font-size: 1rem;
+    padding: 1rem 1.3rem;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="admin-container">
+
+  <header class="admin-header">
+    <h1>Panel de Gestión y Procesos</h1>
+    <p>Selecciona una categoría para ver los documentos</p>
+   
+  </header>
+  
+
+  <section class="accordion">
+
+    <!-- ITEM 4 -->
+    <article class="accordion-item">
+      <div class="accordion-header">
+        Análisis y Resultados
+        <span>▶</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li><a href="/Inicio/Análisis y Resultados/Estructura y Desarrollo.html">Estructura y Desarrollo del Informe General</a></li>
+          <li><a href="/Inicio/Análisis y Resultados/Preliminares..html">Documentos preliminares para el análisis del informe final.</a></li>
+          
+        </ul>
+      </div>
+    </article>
+
+        <!-- ITEM 1 -->
+    <article class="accordion-item">
+      <div class="accordion-header">
+        Seguimiento y Control Interno
+        <span>▶</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li><a href="/Inicio/Equipo de Investigacion/Investigadores.html">Minutas de Reuniones </a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ITEM 5 -->
+    <article class="accordion-item">
+      <div class="accordion-header">
+        Nóminas
+        <span>▶</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li><a href="/Inicio/Nominas/Nominas.Investigadores.html">Nómina de investigadores</a></li>
+          <li><a href="#">Nómina de encuestadores</a></li>
+          <li><a href="#">Nómina de asistentes</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ITEM 6 -->
+    <article class="accordion-item">
+      <div class="accordion-header">
+        Gastos
+        <span>▶</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li><a href="#">Informe mensual de gastos</a></li>
+          <li><a href="#">Recibos y comprobantes</a></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ITEM 7 -->
+    <article class="accordion-item">
+      <div class="accordion-header">
+        Otros Documentos
+        <span>▶</span>
+      </div>
+      <div class="accordion-content">
+        <ul>
+          <li><a href="https://www.canva.com/design/DAG3RkdtDaU/AdHOXulu_k7a946cL-rySQ/edit" target="_blank">Oficios y solicitudes</a></li>
+          <li><a href="https://www.canva.com/design/DAG3RkdtDaU/AdHOXulu_k7a946cL-rySQ/edit" target="_blank">Documentos complementarios</a></li>
+        </ul>
+      </div>
+    </article>
+
+  </section>
+
+</div>
+
+<script>
+/* ===========================================================
+   ACORDEÓN PROFESIONAL
+=========================================================== */
+const headers = document.querySelectorAll(".accordion-header");
+
+headers.forEach(header => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    const content = header.nextElementSibling;
+
+    // Cerrar otros
+    document.querySelectorAll(".accordion-item").forEach(i => {
+      if (i !== item) {
+        i.classList.remove("open");
+        i.querySelector(".accordion-content").style.maxHeight = null;
+      }
+    });
+
+    // Abrir/cerrar actual
+    if (item.classList.contains("open")) {
+      item.classList.remove("open");
+      content.style.maxHeight = null;
+    } else {
+      item.classList.add("open");
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+
+
